@@ -1,0 +1,6 @@
+;; User information
+(setq user-full-name "Your Name")
+(setq user-mail-address "your@email-address.com")
+
+;; Settings for magit
+(setq magit-repository-directories '("~/src/"))
