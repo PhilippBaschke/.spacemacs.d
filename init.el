@@ -119,16 +119,22 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '(("Deja Vu Sans Mono"
-                               :size 18
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
-                              ("DejaVu Sans Mono"
-                               :size 20
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.5))
+   dotspacemacs-default-font (if (> (x-display-pixel-height) 1080)
+                                 '(("Monaco"
+                                    :size 20
+                                    :weight normal
+                                    :width normal
+                                    :powerline-scale 1.3))
+                               '(("Deja Vue Sans Mono"
+                                  :size 18
+                                  :weight normal
+                                  :width normal
+                                  :powerline-scale 1.1)
+                                 ("Monaco"
+                                  :size 16
+                                  :weight normal
+                                  :width normal
+                                  :powerline-scale 1.3)))
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
