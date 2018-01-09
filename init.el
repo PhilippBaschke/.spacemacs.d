@@ -293,6 +293,10 @@ layers configuration. You are free to put any user code."
   ;; See: http://spacemacs.org/layers/+source-control/git/README.html
   (global-git-commit-mode t)
 
+  ;; neccessary for `git finish`
+  ;; See: https://github.com/magit/magit/issues/464#issuecomment-8419054
+  (setenv "EDITOR" "emacsclient")
+
   ;; Settings for flycheck
   (custom-set-variables
    '(flycheck-tidyrc ".tidyrc")
