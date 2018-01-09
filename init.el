@@ -35,6 +35,7 @@ values."
      ibuffer
      javascript
      markdown
+     nginx
      php
      react
      restclient
