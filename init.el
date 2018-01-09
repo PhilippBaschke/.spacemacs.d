@@ -316,6 +316,16 @@ layers configuration. You are free to put any user code."
   ;; https://github.com/syl20bnr/spacemacs/issues/5633#issuecomment-203771402
   (setq frame-resize-pixelwise t)
 
+  ;; Bind SPC zm to zoom for the correct frame size on the MacBook screen
+  (use-package zoom-frm
+    :config
+    (defun pb/zoom-macbook ()
+      (interactive)
+      (let ((frame-zoom-font-difference -6))
+        (toggle-zoom-frame))
+      (toggle-frame-maximized))
+    (spacemacs/set-leader-keys "zm" 'pb/zoom-macbook))
+
   ;; Run prettier.io on save in JavaScript buffers
   (use-package prettier-js
     :config
