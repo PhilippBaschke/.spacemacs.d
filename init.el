@@ -312,6 +312,10 @@ layers configuration. You are free to put any user code."
      (message "Skipping ~/.spacemacs.d/init.local.el"))
     nil)
 
+  ;; Ensure that Spacemacs can take the whole screen
+  ;; https://github.com/syl20bnr/spacemacs/issues/5633#issuecomment-203771402
+  (setq frame-resize-pixelwise t)
+
   ;; Run prettier.io on save in JavaScript buffers
   (use-package prettier-js
     :config
