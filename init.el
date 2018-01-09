@@ -57,7 +57,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(prettier-js)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -305,7 +305,13 @@ layers configuration. You are free to put any user code."
         (message "Loaded local user settings"))
     (file-error
      (message "Skipping ~/.spacemacs.d/init.local.el"))
-    nil))
+    nil)
+
+  ;; Run prettier.io on save in JavaScript buffers
+  (use-package prettier-js
+    :config
+    (add-hook 'js2-mode-hook 'prettier-js-mode)
+    (add-hook 'react-mode-hook 'prettier-js-mode)))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
