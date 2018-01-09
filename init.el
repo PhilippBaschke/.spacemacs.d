@@ -280,7 +280,8 @@ layers configuration. You are free to put any user code."
   ;; Settings for JavaScript
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
-  (setq-default js2-strict-missing-semi-warning nil)
+  (setq-default js2-mode-show-parse-errors nil)
+  (setq-default js2-mode-show-strict-warnings nil)
 
   ;; Settings for (S)CSS
   (setq-default css-indent-offset 2)
