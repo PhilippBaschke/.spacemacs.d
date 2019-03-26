@@ -309,15 +309,20 @@ layers configuration. You are free to put any user code."
   ;; https://github.com/syl20bnr/spacemacs/issues/5633#issuecomment-203771402
   (setq frame-resize-pixelwise t)
 
-  ;; Bind SPC zm to zoom for the correct frame size on the MacBook screen
+  ;; Bind SPC zm/zh to zoom for the correct frame size on all my screens
+  ;; https://www.reddit.com/r/emacs/comments/4rby7n/how_do_you_borderless_maximize_emacsformacosx/d4zxht6/
   (use-package zoom-frm
     :config
-    (defun pb/zoom-macbook ()
-      (interactive)
-      (let ((frame-zoom-font-difference -6))
+    (defun pb/zoom (difference)
+      (let ((frame-zoom-font-difference difference))
         (toggle-zoom-frame))
-      (toggle-frame-maximized))
-    (spacemacs/set-leader-keys "zm" 'pb/zoom-macbook))
+      (set-frame-parameter nil 'fullscreen 'maximized))
+
+    (defun pb/zoom-macbook () (interactive) (pb/zoom -7))
+    (defun pb/zoom-home () (interactive) (pb/zoom -2))
+
+    (spacemacs/set-leader-keys "zm" 'pb/zoom-macbook)
+    (spacemacs/set-leader-keys "zh" 'pb/zoom-home))
 
   ;; Run prettier.io on save in JavaScript buffers
   (use-package prettier-js
