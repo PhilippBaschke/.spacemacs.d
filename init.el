@@ -120,22 +120,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font (if (> (x-display-pixel-height) 1080)
-                                 '(("Monaco"
-                                    :size 20
-                                    :weight normal
-                                    :width normal
-                                    :powerline-scale 1.3))
-                               '(("Deja Vue Sans Mono"
-                                  :size 18
-                                  :weight normal
-                                  :width normal
-                                  :powerline-scale 1.1)
-                                 ("Monaco"
-                                  :size 16
-                                  :weight normal
-                                  :width normal
-                                  :powerline-scale 1.3)))
+   dotspacemacs-default-font '("Fira Code"
+                               :size 21
+                               :weight normal
+                               :width normal
+                               :powerline-scale 1.3)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -269,6 +258,10 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+
+  ;; Font Ligatures for FiraCode
+  ;; https://github.com/tonsky/FiraCode/wiki/Emacs-instructions
+  (mac-auto-operator-composition-mode)
 
   ;; Settings for HTML
   (setq-default
