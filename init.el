@@ -491,6 +491,11 @@ layers configuration. You are free to put any user code."
    '(flycheck-phpcs-standard "PSR2")
    '(flycheck-scss-lint-rc "scss-lint.yml"))
 
+  ;; Set rg as the command for SPC + /
+  ;; https://gist.github.com/pesterhazy/fabd629fbb89a6cd3d3b92246ff29779
+  (evil-leader/set-key "/" 'spacemacs/helm-project-do-ag)
+  (setq-default helm-ag-base-command "rg --vimgrep --no-heading --smart-case")
+
   ;; Load any machine specific settings.
   (condition-case error
       (progn
