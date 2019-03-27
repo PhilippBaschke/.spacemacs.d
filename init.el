@@ -205,7 +205,7 @@ values."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme 'vim-powerline
 
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -216,7 +216,7 @@ values."
                                :size 21
                                :weight normal
                                :width normal
-                               :powerline-scale 1.3)
+                               :powerline-scale 1)
 
    ;; The leader key
    dotspacemacs-leader-key "SPC"
