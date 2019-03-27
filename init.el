@@ -452,6 +452,13 @@ layers configuration. You are free to put any user code."
   ;; https://github.com/tonsky/FiraCode/wiki/Emacs-instructions
   (mac-auto-operator-composition-mode)
 
+  ;; Mac keybindings
+  ;; https://gist.github.com/railwaycat/3498096
+  (setq mac-command-modifier 'hyper)
+  (global-set-key [(hyper a)] 'mark-whole-buffer)
+  (global-set-key [(hyper v)] 'yank)
+  (global-set-key [(hyper c)] 'kill-ring-save)
+
   ;; Settings for HTML
   (setq-default
    web-mode-markup-indent-offset 2
