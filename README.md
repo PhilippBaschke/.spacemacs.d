@@ -7,3 +7,6 @@ A simple Spacemacs configuration for web development :space_invader:
 
 ## Recommended Emacs client (Mac)
 I use the [Emacs Mac Port](https://github.com/railwaycat/homebrew-emacsmacport)<br>`brew cask install emacs-mac-spacemacs-icon`
+
+## Spacemacs version
+This configuration expects the [`develop` version of Spacemacs](https://github.com/syl20bnr/spacemacs/tree/develop)
