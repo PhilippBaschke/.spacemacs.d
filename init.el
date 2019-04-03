@@ -55,6 +55,7 @@ values."
      markdown
      nginx
      php
+     prettier
      react
      restclient
      (ruby :variables
@@ -76,7 +77,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(prettier-js)
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -525,10 +526,8 @@ layers configuration. You are free to put any user code."
     (spacemacs/set-leader-keys "zh" 'pb/zoom-home))
 
   ;; Run prettier.io on save in JavaScript buffers
-  (use-package prettier-js
-    :config
-    (add-hook 'js2-mode-hook 'prettier-js-mode)
-    (add-hook 'react-mode-hook 'prettier-js-mode)))
+  (add-hook 'js2-mode-hook 'prettier-js-mode)
+  (add-hook 'react-mode-hook 'prettier-js-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
