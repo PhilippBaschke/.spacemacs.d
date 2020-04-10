@@ -520,7 +520,7 @@ layers configuration. You are free to put any user code."
       (set-frame-parameter nil 'fullscreen 'maximized))
 
     (defun pb/zoom-macbook () (interactive) (pb/zoom -7))
-    (defun pb/zoom-home () (interactive) (pb/zoom -2))
+    (defun pb/zoom-home () (interactive) (pb/zoom -4))
 
     (spacemacs/set-leader-keys "zm" 'pb/zoom-macbook)
     (spacemacs/set-leader-keys "zh" 'pb/zoom-home))
