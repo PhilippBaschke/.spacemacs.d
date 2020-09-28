@@ -51,7 +51,8 @@ values."
      git
      html
      ibuffer
-     javascript
+     (javascript :variables
+                 javascript-backend 'tide)
      markdown
      nginx
      php
@@ -65,6 +66,7 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      syntax-checking
+     tide
      themes-megapack
      vagrant
      (version-control :variables
