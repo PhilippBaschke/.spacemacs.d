@@ -51,7 +51,8 @@ values."
      git
      html
      ibuffer
-     javascript
+     (javascript :variables
+                 javascript-backend 'tide)
      markdown
      nginx
      php
@@ -65,7 +66,11 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      syntax-checking
+     tide
      themes-megapack
+     (typescript :variables
+                 typescript-backend 'tide
+                 typescript-linter 'eslint)
      vagrant
      (version-control :variables
                       version-control-diff-tool 'git-gutter+
@@ -472,6 +477,9 @@ layers configuration. You are free to put any user code."
   (setq-default js2-mode-show-parse-errors nil)
   (setq-default js2-mode-show-strict-warnings nil)
 
+  ;; Settings for TypeScript
+  (setq-default typescript-indent-level 2)
+
   ;; Settings for (S)CSS
   (setq-default css-indent-offset 2)
 
@@ -525,9 +533,11 @@ layers configuration. You are free to put any user code."
     (spacemacs/set-leader-keys "zm" 'pb/zoom-macbook)
     (spacemacs/set-leader-keys "zh" 'pb/zoom-home))
 
-  ;; Run prettier.io on save in JavaScript buffers
+  ;; Run prettier.io on save in JavaScript/TypeScript buffers
   (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'react-mode-hook 'prettier-js-mode))
+  (add-hook 'react-mode-hook 'prettier-js-mode)
+  (add-hook 'typescript-mode-hook 'prettier-js-mode)
+  (add-hook 'typescript-tsx-mode-hook 'prettier-js-mode))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
